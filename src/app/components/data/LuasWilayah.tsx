@@ -1,24 +1,21 @@
 import React from 'react';
-import { Saira } from 'next/font/google';
-import PetaPuloGebang from '@/assets/data/peta_pulo_gebang.png';
-import IconPeta from '@/assets/data/icon_peta.png';
-import IconChart from '@/assets/data/icon_chart.png';
+// import { Saira } from 'next/font/google';
+// import PetaPuloGebang from '@/assets/data/peta_pulo_gebang.png';
+// import IconPeta from '@/assets/data/icon_peta.png';
+// import IconChart from '@/assets/data/icon_chart.png';
 import Image from 'next/image';
+import ImgWilayah from '@/assets/data/img_wilayah.png';
+import ImgWilayahMobile from '@/assets/data/img_wilayah_mobile.png';
 
-const saira = Saira({
-  weight: '800',
-  subsets: ['latin'],
-});
+// const saira = Saira({
+//   weight: '800',
+//   subsets: ['latin'],
+// });
 function LuasWilayah() {
   return (
     <>
-      <div className='container bg-primary rounded-2xl py-4 md:py-12'>
+      {/* <div className='container bg-primary rounded-2xl py-4 md:py-12'>
         <div className='flex flex-col justify-start items-center gap-4 md:gap-8'>
-          {/* <p
-            className={`heading text-2xl md:text-3xl 2xl:text-5xl font-semibold text-white ${saira.className}`}
-          >
-            Luas Wilayah
-          </p> */}
           <div className='w-full grid grid-cols-2 justify-around gap-8'>
             <div className='col-span-1'>
               <div className=' w-full flex flex-col justify-center items-center'>
@@ -63,6 +60,20 @@ function LuasWilayah() {
             </div>
           </div>
         </div>
+      </div> */}
+      <div className='hidden md:block'>
+        <Image
+          src={ImgWilayah}
+          alt='wilayah card'
+          className='object-cover w-full'
+        />
+      </div>
+      <div className='block md:hidden'>
+        <Image
+          src={ImgWilayahMobile}
+          alt='wilayah card'
+          className='object-cover w-full'
+        />
       </div>
     </>
   );

@@ -1,9 +1,12 @@
 import React from 'react';
-import IlustratorBuilding from '@/assets/illustrate.png';
-import PakGub from '@/assets/pak_gub.svg';
+import IlustratorBuilding from '@/assets/illustrate_2.png';
+// import PakGub from '@/assets/pak_gub.svg';
+import AsnImg from '@/assets/asn.png';
+
 import Image from 'next/image';
 
 import { Saira } from 'next/font/google';
+import { TbChevronsDown } from 'react-icons/tb';
 
 const saira = Saira({
   weight: '800',
@@ -13,37 +16,39 @@ const saira = Saira({
 function HeroImg() {
   return (
     <>
-      <div className='h-[80vh] md:h-[99vh] bg-primary w-full pt-24 relative z-0'>
+      <div className='h-[80vh] md:h-[100vh] bg-primary w-full pt-14 relative z-0'>
         <div className='container mx-auto px-8 h-full'>
-          <div className='grid grid-cols-1 md:grid-cols-2 h-full '>
-            <div className='col-span-1 flex flex-col justify-start gap-8 md:gap-20 md:py-12 2xl:py-40 px-4 md:px-12'>
+          <div className='grid grid-cols-1 h-full '>
+            <div className='col-span-1 flex flex-col justify-start items-center  gap-8 md:gap-12 md:py-12 2xl:py-20 px-4 md:px-12'>
               <p
-                className={`'heading text-3xl md:text-4xl 2xl:text-6xl text-white font-semibold ${saira.className}`}
+                className={`'heading mx-auto text-3xl md:text-4xl 2xl:text-6xl text-white font-semibold ${saira.className}`}
               >
                 SIAP MAS PRAM dan SI DOEL
               </p>
 
-              <div className='flex flex-col justify-start gap-8'>
-                <p className='text-white text-xl md:text-2xl font-bold w-full md:w-2/3'>
+              <div className='flex flex-col justify-center items-center gap-8'>
+                <p className='text-white mx-auto text-xl md:text-2xl 2xl:text-4xl font-bold w-full '>
                   Pelayanan Masyarakat Berbasis Teknologi Informasi
                 </p>
-                <p className='text-white'>Pengenalan Lebih Lanjut</p>
+                <div className='px-8 py-4 mx-auto border-2 border-white rounded-full flex flex-row justify-center items-center gap-2 hover:bg-white hover:text-primary transition-all duration-300 ease-in-out cursor-pointer'>
+                  <p>Pengenalan Lebih Lanjut</p> <TbChevronsDown />
+                </div>
               </div>
-            </div>
-            <div className=' col-span-1 flex flex-col justify-end'>
-              <Image
-                src={PakGub}
-                alt='Pak Pram dan Mas Doel'
-                className='w-full z-10 md:h-7/8'
-              />
             </div>
           </div>
         </div>
-        <Image
-          src={IlustratorBuilding}
-          alt='Jakarta Building'
-          className='absolute bottom-0 w-full z-0'
-        />
+        <div className='container mx-auto'>
+          <Image
+            src={IlustratorBuilding}
+            alt='Jakarta Building'
+            className='absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 z-0'
+          />
+          <Image
+            src={AsnImg}
+            alt='Pak Pram dan Mas Doel'
+            className='absolute bottom-0 right-1/6 z-10 w-3/10'
+          />
+        </div>
       </div>
     </>
   );

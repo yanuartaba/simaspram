@@ -39,8 +39,25 @@ function Monografi() {
             <p className='roboto text-gray-700 w-1/2 text-center text-xl'>
               Berbagai data yang dapat kamu pilih
             </p>
+
+            <div className='p-4 mx-auto'>
+              <select
+                name='selectedTab'
+                className='flex md:hidden w-96 bg-white text-gray-700 text-xl py-4 px-4 rounded-xl'
+              >
+                {tabs.map((tab, idx) => (
+                  <option
+                    key={idx}
+                    // value={tab.comp}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className='flex flex-row justity-between items-center gap-8'>
+          <div className='hidden md:flex flex-row justity-between items-center gap-8'>
             <div className='w-full hidden md:flex flex-row justify-start items-center gap-4 py-6 md:py-12'>
               {tabs.map((tab) => (
                 <div
