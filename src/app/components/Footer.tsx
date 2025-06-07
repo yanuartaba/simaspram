@@ -92,15 +92,15 @@ function Footer() {
       <footer className='bg-primary'>
         <div className='container mx-auto px-8 relative'>
           <div className='w-full flex flex-col justify-between items-start gap-12 py-12'>
-            <div className='w-full flex flex-row justify-between items-start'>
-              <div className='w-2/12 flex flex-row justify-start items-center gap-4'>
+            <div className='w-full flex flex-col md:flex-row justify-between gap-4 items-start'>
+              <div className='w-full md:w-2/12 flex flex-row justify-start items-center gap-4'>
                 <Image src={LogoPemprov} alt='Logo Pemprov Jakarta' />
                 <Image src={LogoJaktim} alt='Logo Jakarta Timur' />
               </div>
 
-              <div className='w-8/12 flex flex-col justify-start items-start gap-4'>
+              <div className='mw-full d:w-8/12 flex flex-col justify-start items-start gap-4'>
                 <p className='font-semibold'>Alamat:</p>
-                <p className='text-sm w-2/3'>
+                <p className='text-sm w-full md:w-2/3'>
                   Jl. Raya Pulo Gebang No.3, RT.6/RW.3, Pulo Gebang, Kec.
                   Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta
                   13950
@@ -109,7 +109,7 @@ function Footer() {
                 <p className='text-sm'>Surel: siapmaspram@gmail.com</p>
               </div>
 
-              <div className='w-2/12 flex flex-col justify-start items-start gap-4'>
+              <div className='w-full md:w-2/12 flex flex-col justify-start items-start gap-2 md:gap-4'>
                 <p className='font-semibold'>Laman terkait</p>
 
                 {links.map((link) => {
@@ -131,7 +131,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className='flex flex-row justify-start items-start gap-16'>
+            <div className='flex flex-col md:flex-row justify-start items-start gap-2 md:gap-16'>
               {links.map((link) => {
                 if (!link.isExternal) {
                   return (
@@ -144,13 +144,13 @@ function Footer() {
               })}
             </div>
 
-            <div className='w-full flex flex-row justify-between items-center'>
+            <div className='w-full flex flex-col md:flex-row justify-between items-center gap-4'>
               <p>
                 Hak cipta © Simaspram 2025. Seluruh hak cipta dilindungi
                 undang-undang
               </p>
 
-              <div className='flex flex-row justify-end items-center gap-8'>
+              <div className='flex flex-row justify-start md:justify-end items-center gap-8'>
                 {sosmeds.map((sosmed) => (
                   <a
                     key={sosmed.id}

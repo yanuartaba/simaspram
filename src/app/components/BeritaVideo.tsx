@@ -10,8 +10,8 @@ const saira = Saira({
 function BeritaVideo() {
   return (
     <>
-      <div className='container-fluid bg-white md:py-8'>
-        <div className='container mx-auto py-4 md:py-12'>
+      <div id='video' className='container-fluid bg-white md:py-8'>
+        <div className='container mx-auto px-4 md:px-0 py-4 md:py-12'>
           <div className='flex flex-col justify-start items-center gap-4 md:gap-8 '>
             <p
               className={` w-2/3 text-center heading text-2xl md:text-3xl 2xl:text-5xl font-semibold text-[#052158] ${saira.className}`}
@@ -19,7 +19,7 @@ function BeritaVideo() {
               Berita Video
             </p>
 
-            <div className='grid grid-cols-3 gap-8 justify-between'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 justify-between'>
               {videos.map((video) => (
                 <div
                   key={video.id}

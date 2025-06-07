@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
 import LogoHeader from '@/assets/logo_header.svg';
 import Image from 'next/image';
 import menus from '@/constant/dataMenus';
@@ -11,25 +13,44 @@ const roboto = Red_Hat_Display({
 });
 
 function Navigation() {
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <>
+      {/* <div className='container'> */}
       <nav
         id='header'
-        className='fixed w-full z-100 top-0 bg-[#0343A2] text-white'
+        className='fixed w-full z-10 top-0 bg-[#0343A2] text-white px-4'
       >
-        <div className='w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2'>
-          <div className='pl-4 flex items-center'>
+        <div className='container mx-auto flex  items-center justify-between mt-0 py-2'>
+          <div className='flex items-center'>
             <a
               className='toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl'
               href='#'
             >
-              <Image src={LogoHeader} alt={'Logo'} />
+              <Image src={LogoHeader} alt={'Logo'} className='w-40' />
             </a>
           </div>
-          <div className='block lg:hidden pr-4'>
+          <div className='hidden lg:block'>
+            <ul className='list-reset lg:flex justify-end flex-1 items-center'>
+              {menus &&
+                menus.map((menu) => (
+                  <li key={menu.key} className='md:mr-3 2xl:mr-8'>
+                    <a
+                      className={`${roboto.className} inline-block py-2 px-4 text-white font-bold no-underline`}
+                      href={`#${menu.section}`}
+                    >
+                      {menu?.title}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div className='lg:hidden'>
             <button
               id='nav-toggle'
-              className='flex items-center p-1 text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'
+              className='w-full flex items-center p-1 text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'
+              onClick={() => setShowNav(!showNav)}
             >
               <svg
                 className='fill-current h-6 w-6'
@@ -41,18 +62,20 @@ function Navigation() {
               </svg>
             </button>
           </div>
-
-          <div
-            className='w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20'
-            id='nav-content'
-          >
-            <ul className='list-reset lg:flex justify-end flex-1 items-center'>
+        </div>
+        {showNav && (
+          <div className='lg:hidden'>
+            <ul
+              className='list-reset lg:flex flex-col justify-end flex-1 items-center'
+              id='nav-content'
+            >
               {menus &&
                 menus.map((menu) => (
                   <li key={menu.key} className='md:mr-3 2xl:mr-8'>
                     <a
                       className={`${roboto.className} inline-block py-2 px-4 text-white font-bold no-underline`}
-                      href='#'
+                      href={`#${menu.section}`}
+                      onClick={() => setShowNav(!showNav)}
                     >
                       {menu?.title}
                     </a>
@@ -60,9 +83,10 @@ function Navigation() {
                 ))}
             </ul>
           </div>
-        </div>
+        )}
         <hr className='border-b border-gray-100 opacity-25 my-0 py-0' />
       </nav>
+      {/* </div> */}
     </>
   );
 }

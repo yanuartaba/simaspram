@@ -10,7 +10,7 @@ const saira = Saira({
 function ProgramBantuan() {
   return (
     <>
-      <div className='container-fluid bg-white md:py-8'>
+      <div id='program' className='container-fluid bg-white md:py-8'>
         <div className='container mx-auto py-4 md:py-12'>
           <div className='flex flex-col justify-start items-center gap-4 md:gap-8 '>
             <p

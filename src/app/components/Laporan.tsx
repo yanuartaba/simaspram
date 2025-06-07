@@ -9,16 +9,16 @@ const saira = Saira({
 function Laporan() {
   return (
     <>
-      <div className='container-fluid bg-white md:py-8'>
+      <div className='container-fluid bg-white px-4 md:py-8'>
         <div className='container mx-auto py-4 md:py-12'>
           <div className='flex flex-col justify-start items-center gap-4 md:gap-8'>
             <p
-              className={`heading text-2xl md:text-3xl 2xl:text-5xl font-semibold text-[#052158] ${saira.className}`}
+              className={`heading text-2xl text-center md:text-3xl 2xl:text-5xl font-semibold text-[#052158] ${saira.className}`}
             >
               Laporan Kesejahteraan Masyarakat
             </p>
 
-            <p className='roboto text-gray-700 w-1/2 text-center text-xl'>
+            <p className='roboto text-gray-700 w-full md:w-1/2 text-center text-sm md:text-xl'>
               Warga dapat membuat laporan terkait masalah atau kejadian yang
               terjadi di wilayah tempat tinggal mereka, seperti kesejahteraan
               masyarakat melalui tombol dibawah ini.

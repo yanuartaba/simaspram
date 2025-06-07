@@ -12,7 +12,7 @@ function Mitra() {
   return (
     <>
       <div className='container mx-auto bg-white'>
-        <div className='flex flex-col justify-start items-center gap-12  py-4 md:py-12'>
+        <div className='flex flex-col justify-start items-center gap-8 md:gap-12 px-4 md:px-0  py-12'>
           <h1
             className={`Headding text-2xl md:text-3xl 2xl:text-5xl font-semibold text-gray-800 ${saira.className}`}
           >

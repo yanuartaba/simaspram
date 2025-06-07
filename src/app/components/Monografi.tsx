@@ -27,7 +27,10 @@ function Monografi() {
 
   return (
     <>
-      <div className='container-fluid bg-[#E6ECF6] md:py-8'>
+      <div
+        id='monografi'
+        className='container-fluid bg-[#E6ECF6] px-4 md:px-0 md:py-8'
+      >
         <div className='container bg-[#E6ECF6] mx-auto py-4 md:py-12'>
           <div className='flex flex-col justify-start items-center gap-4 md:gap-8'>
             <p
@@ -36,22 +39,27 @@ function Monografi() {
               Data Monografi
             </p>
 
-            <p className='roboto text-gray-700 w-1/2 text-center text-xl'>
+            <p className='roboto text-gray-700 w-full md:w-1/2 text-center text-xl'>
               Berbagai data yang dapat kamu pilih
             </p>
 
             <div className='p-4 mx-auto'>
               <select
                 name='selectedTab'
-                className='flex md:hidden w-96 bg-white text-gray-700 text-xl py-4 px-4 rounded-xl'
+                className='flex md:hidden w-full md:w-96 bg-white text-gray-700 text-xl py-4 px-4 rounded-xl'
+                // onChange={(e) => console.log(e.target.value)}
+                onChange={(e) => setActiveTab(Number(e.target.value))}
+                value={activeTab}
               >
                 {tabs.map((tab, idx) => (
                   <option
                     key={idx}
+                    value={tab.id}
                     // value={tab.comp}
-                    onClick={() => setActiveTab(tab.id)}
+                    // onClick={() => setActiveTab(tab.id)}
+                    // onClick={() => console.log(tab.id)}
                   >
-                    {tab.label}
+                    <p className='px-2'>{tab.label}</p>
                   </option>
                 ))}
               </select>

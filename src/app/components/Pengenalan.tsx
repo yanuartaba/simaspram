@@ -11,17 +11,17 @@ function Pengenalan() {
   return (
     <>
       <div className='container-fluid bg-[#E6ECF6]'>
-        <div className='container mx-auto py-4 md:py-12'>
+        <div className='container mx-auto px-4 md:px-0 py-8 md:py-12'>
           <div className='flex flex-col justify-start items-center gap-4 md:gap-8'>
             <p className='text-gray-500 font-semibold'>PENGENALAN</p>
 
             <p
-              className={`heading text-2xl md:text-3xl 2xl:text-5xl font-semibold text-[#052158] ${saira.className}`}
+              className={`heading w-80 md:w-full text-center text-2xl md:text-3xl 2xl:text-5xl font-semibold text-[#052158] ${saira.className}`}
             >
               Siap Mas PRAM dan Aplikasi SI DOEL
             </p>
 
-            <div className='grid grid-cols-4 gap-8 py-6 md:py-12'>
+            <div className='grid grid-cols-1 md:grid-cols-4 gap-8 py-6 md:py-12'>
               {items.map((item) => (
                 <div
                   //   onCursorEnter={() => {}}
